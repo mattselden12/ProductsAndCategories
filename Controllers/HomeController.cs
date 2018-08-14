@@ -20,35 +20,88 @@ namespace ProductsAndCategories.Controllers
 			_context = context;
 		}
 
-        public IActionResult Index()
+        [HttpGet("~/products/new")]
+        public IActionResult NewProduct()
         {
-            return View();
+            return View("NewProduct");
         }
 
-        public IActionResult About()
+        [HttpGet("~/categories/new")]
+        public IActionResult NewCategory()
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
+            return View("NewCategory");
         }
 
-        public IActionResult Contact()
+        [HttpGet("~/products/{Product_Id}")]
+        public IActionResult Product(int Product_Id)
         {
-            ViewData["Message"] = "Your contact page.";
+            Product this_product = _context.products.Include(p => p.Links).ThenInclude(l => l.Category).SingleOrDefault(p => p.ProductId == Product_Id);
+            List<Category> AC = _context.categories.Include(c => c.Links).ThenInclude(l => l.Product).ToList();
+            ViewBag.AllCategories = AC;
+            return View("Product", this_product);
+        }
 
-            return View();
+        [HttpGet("~/categories/{Category_Id}")]
+        public IActionResult Category(int Category_Id)
+        {
+            Category this_category = _context.categories.Include(c => c.Links).ThenInclude(l => l.Product).SingleOrDefault(c => c.CategoryId == Category_Id);
+            List<Product> AP = _context.products.Include(c => c.Links).ThenInclude(l => l.Category).ToList();
+            ViewBag.AllProducts = AP;
+            return View("Category", this_category);
+        }
+
+        [HttpPost("addproduct")]
+        public IActionResult AddProduct(Product this_product)
+        {
+            Product new_product = new Product
+            {
+                Name = this_product.Name,
+                Description = this_product.Description,
+                Price = this_product.Price
+            };
+            _context.products.Add(new_product);
+            _context.SaveChanges();
+            return Redirect("~/products/"+new_product.ProductId);
+        }
+
+        [HttpPost("addcategory")]
+        public IActionResult AddCategory(string Name)
+        {
+            Category new_category = new Category
+            {
+                Name = Name
+            };
+            _context.categories.Add(new_category);
+            _context.SaveChanges();
+            return Redirect("~/categories/"+new_category.CategoryId);
         }
 
 
+        [HttpPost("addcattoprod")]
+        public IActionResult AddCatToProd(int productid, int categoryid)
+        {
+            Link new_link = new Link
+            {
+                ProductId = productid,
+                CategoryId = categoryid
+            };
+            _context.links.Add(new_link);
+            _context.SaveChanges();
+            return Redirect("~/products/"+productid);
+        }
 
-
-
-
-
-
-
-
-
+        [HttpPost("addprodtocat")]
+        public IActionResult AddProdToCat(int productid, int categoryid)
+        {
+            Link new_link = new Link
+            {
+                ProductId = productid,
+                CategoryId = categoryid
+            };
+            _context.links.Add(new_link);
+            _context.SaveChanges();
+            return Redirect("~/categories/"+categoryid);
+        }
 
 
 

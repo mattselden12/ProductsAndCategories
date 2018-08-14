@@ -1,0 +1,43 @@
+@model Category
+
+<div id="category">
+    <h1>@Model.Name</h1>
+    <div class="leftside">
+        <h3>Products:</h3>
+        <h4>
+            <ul>
+                @foreach(var link in @Model.Links)
+                {
+                    <li>@link.Product.Name</li>
+                }
+           </ul>
+        </h4>
+    </div>
+    <div class="rightside">
+        <form asp-action="AddProdToCat" asp-controller="Home" method="post">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Add Product:</label>
+                <div class="col-sm-10">
+                    <select class="form-control" name="productid">
+                        @foreach(var product in @ViewBag.AllProducts)
+                        {
+                            var Blean = "false";
+                            foreach(var category in product.Links)
+                            {
+                                if(category.Category.CategoryId == @Model.CategoryId)
+                                {
+                                    Blean = "true";
+                                }
+                            }
+                            if(Blean == "false"){
+                                <option value = "@product.ProductId">@product.Name</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+            <input type="hidden" name="categoryid" value="@Model.CategoryId">
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+    </div>
+</div>

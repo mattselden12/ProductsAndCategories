@@ -1,0 +1,11 @@
+C:\Users\matth\Desktop\Coding Dojo\c#_stack\ORM\ProductsAndCategories\bin\Debug\netcoreapp2.0\ProductsAndCategories.deps.json
+C:\Users\matth\Desktop\Coding Dojo\c#_stack\ORM\ProductsAndCategories\bin\Debug\netcoreapp2.0\ProductsAndCategories.runtimeconfig.json
+C:\Users\matth\Desktop\Coding Dojo\c#_stack\ORM\ProductsAndCategories\bin\Debug\netcoreapp2.0\ProductsAndCategories.runtimeconfig.dev.json
+C:\Users\matth\Desktop\Coding Dojo\c#_stack\ORM\ProductsAndCategories\bin\Debug\netcoreapp2.0\ProductsAndCategories.dll
+C:\Users\matth\Desktop\Coding Dojo\c#_stack\ORM\ProductsAndCategories\bin\Debug\netcoreapp2.0\ProductsAndCategories.pdb
+C:\Users\matth\Desktop\Coding Dojo\c#_stack\ORM\ProductsAndCategories\obj\Debug\netcoreapp2.0\ProductsAndCategories.csprojResolveAssemblyReference.cache
+C:\Users\matth\Desktop\Coding Dojo\c#_stack\ORM\ProductsAndCategories\obj\Debug\netcoreapp2.0\ProductsAndCategories.csproj.CoreCompileInputs.cache
+C:\Users\matth\Desktop\Coding Dojo\c#_stack\ORM\ProductsAndCategories\obj\Debug\netcoreapp2.0\ProductsAndCategories.AssemblyInfoInputs.cache
+C:\Users\matth\Desktop\Coding Dojo\c#_stack\ORM\ProductsAndCategories\obj\Debug\netcoreapp2.0\ProductsAndCategories.AssemblyInfo.cs
+C:\Users\matth\Desktop\Coding Dojo\c#_stack\ORM\ProductsAndCategories\obj\Debug\netcoreapp2.0\ProductsAndCategories.dll
+C:\Users\matth\Desktop\Coding Dojo\c#_stack\ORM\ProductsAndCategories\obj\Debug\netcoreapp2.0\ProductsAndCategories.pdb

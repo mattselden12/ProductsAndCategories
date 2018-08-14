@@ -1,6 +1,5 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    padding: 8%;
 }
 
 /* Wrapping element */
@@ -32,4 +31,59 @@
     .carousel-caption {
         display: none;
     }
+}
+
+h1{
+    margin-bottom: 4%;
+}
+
+form{
+    width: 50%;
+}
+
+textarea{
+    width: 125%;
+}
+
+.btn-primary{
+    margin-left: 18%;
+}
+
+.leftside{
+    width: 35%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.rightside{
+    width: 55%;
+    display:inline-block;
+    vertical-align: top;
+}
+
+li{
+    margin: 2% 0%;
+}
+
+#product .col-form-label, #category .col-form-label{
+    width: 130px;
+    display: inline-block;
+}
+
+#product .col-sm-10, #category .col-sm-10{
+    width: 400px;
+    display: inline-block;
+}
+
+h3{
+    margin: 0px;
+}
+
+#product .row, #category .row{
+    width: 600px;
+}
+
+.btn{
+    margin-left: 41%;
+    margin-top: 20%;
 }
